@@ -9,7 +9,7 @@ app.use(bodyParcer.json())
 const cors = require('cors')
 app.use(cors())
 
-app.use(express.static('server'))
+app.use(express.static('website'))
 
 const port = 8000
 
@@ -21,12 +21,12 @@ function listening() {
 }
 
 projectData = {
-  temperature: '25',
-  date: '2020-07-15',
-  user_response: 'I feel good!'
+  temperature: '',
+  date: '',
+  user_response: ''
 }
 
-app.get('/', function (req, res) {
+app.get('/data', function (req, res) {
   res.send(projectData)
 })
 
